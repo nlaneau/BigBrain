@@ -6,7 +6,8 @@ namespace Assets.Scripts
     {
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            Destroy(collision.gameObject);
+            if (!collision.gameObject.CompareTag("Player"))
+                Destroy(collision.gameObject);
         }
     }
 }
