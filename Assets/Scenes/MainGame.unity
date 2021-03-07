@@ -657,6 +657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objects:
   - {fileID: 7799718669060619622, guid: 069565d79dc252d4ba81b8e5619e8ece, type: 3}
+  - {fileID: 206186164854828767, guid: e920202c5e29e404a80995e09e4f1570, type: 3}
   _bottomPlatform: {fileID: 263163824}
 --- !u!4 &1862978484
 Transform:
