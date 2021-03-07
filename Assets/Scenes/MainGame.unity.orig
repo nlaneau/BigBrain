@@ -294,8 +294,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297060011}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.04, y: -3.75, z: 0.3850545}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.2552, y: -3.4284, z: 0.3850545}
+  m_LocalScale: {x: 1.3872, y: 1.8742, z: 1}
   m_Children: []
   m_Father: {fileID: 1866014077}
   m_RootOrder: 0
@@ -496,8 +496,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289272853}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -3.18, z: 0.3850545}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.3, y: -1.9, z: 0.3850545}
+  m_LocalScale: {x: 1.8043, y: 1.9335482, z: 1}
   m_Children: []
   m_Father: {fileID: 1866014077}
   m_RootOrder: 1
@@ -589,7 +589,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: -0.08, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0.34500003}
+  m_ConnectedAnchor: {x: 0.032583635, y: 0.46988663}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -656,8 +656,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objects:
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - {fileID: 7799718669060619622, guid: 069565d79dc252d4ba81b8e5619e8ece, type: 3}
   - {fileID: 206186164854828767, guid: e920202c5e29e404a80995e09e4f1570, type: 3}
+=======
+=======
+>>>>>>> Stashed changes
+  - {fileID: 3107882345186411203, guid: 7287421ca81a4dd4caa81c9e7fe0f95d, type: 3}
+  - {fileID: 954053131706427973, guid: b04a442c370df2f448ae16b3879085cf, type: 3}
+  - {fileID: 7198070184479392298, guid: 361bb29dcf10cb04aa2e5f8cbfaaadfe, type: 3}
+  - {fileID: 5924746684814361688, guid: a18c8a6c6b45fab40a462959c4a5652f, type: 3}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
   _bottomPlatform: {fileID: 263163824}
 --- !u!4 &1862978484
 Transform:
