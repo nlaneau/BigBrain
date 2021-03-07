@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -10,7 +9,6 @@ namespace Assets.Scripts
         
         private void OnCollisionEnter2D(Collision2D collision)
         {
-
             if (collision.gameObject.CompareTag("Player"))
                 return;
 
@@ -19,8 +17,8 @@ namespace Assets.Scripts
 
             if (collision.gameObject.CompareTag("SmarterObject"))
             {
-                transform.localScale += new Vector3(Config.HEAD_GROWTH_SCALE, Config.HEAD_GROWTH_SCALE);
                 _big_head.Play();
+                transform.localScale += new Vector3(Config.HEAD_GROWTH_SCALE, Config.HEAD_GROWTH_SCALE);                
             }
             else
             {
