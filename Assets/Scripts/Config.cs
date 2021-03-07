@@ -6,7 +6,7 @@ namespace Assets.Scripts
     {
         public const int ITEM_SPAWN_RATE = 300; // Every X Frames
         public const float ITEM_SPAWN_HEIGHT = 10f; // Height above platform
-        public const float PLAYER_MOVEMENT_SPEED = 0.025f;
-        public const float HEAD_GROWTH_SCALE = 0.1f;
+        public const float PLAYER_MOVEMENT_SPEED = 20f;
+        public const float HEAD_GROWTH_SCALE = 0.2f;
     }
 }

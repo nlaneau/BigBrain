@@ -4,12 +4,24 @@ namespace Assets.Scripts
 {
     class PlayerMovement : MonoBehaviour
     {
+        private Rigidbody2D _rigidbody2D;
+        
+        private void Start()
+        {
+            _rigidbody2D = GetComponent<Rigidbody2D>();
+        }
+
         private void Update()
         {
             if (Input.GetKey(KeyCode.LeftArrow))
-                transform.Translate(-Config.PLAYER_MOVEMENT_SPEED, 0, 0);
+                _rigidbody2D.AddForce(Vector2.left * Config.PLAYER_MOVEMENT_SPEED);
+            //_rigidbody2D.velocity += Vector2.left * Config.PLAYER_MOVEMENT_SPEED * Time.deltaTime;
+            
+
             if (Input.GetKey(KeyCode.RightArrow))
-                transform.Translate(Config.PLAYER_MOVEMENT_SPEED, 0, 0);
+                _rigidbody2D.AddForce(Vector2.right * Config.PLAYER_MOVEMENT_SPEED);
+            //_rigidbody2D.velocity += Vector2.right * Config.PLAYER_MOVEMENT_SPEED * Time.deltaTime;
+            //
         }
     }
 }

@@ -19,8 +19,8 @@ namespace Assets.Scripts
 
             if (collision.gameObject.CompareTag("SmarterObject"))
             {
-                transform.localScale += new Vector3(Config.HEAD_GROWTH_SCALE, Config.HEAD_GROWTH_SCALE);
                 _big_head.Play();
+                transform.localScale += new Vector3(Config.HEAD_GROWTH_SCALE, Config.HEAD_GROWTH_SCALE);                
             }
             else
             {
