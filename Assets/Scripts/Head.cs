@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -10,7 +9,6 @@ namespace Assets.Scripts
         
         private void OnCollisionEnter2D(Collision2D collision)
         {
-
             if (collision.gameObject.CompareTag("Player"))
                 return;
 

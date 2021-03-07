@@ -14,14 +14,10 @@ namespace Assets.Scripts
         private void Update()
         {
             if (Input.GetKey(KeyCode.LeftArrow))
-                _rigidbody2D.AddForce(Vector2.left * Config.PLAYER_MOVEMENT_SPEED);
-            //_rigidbody2D.velocity += Vector2.left * Config.PLAYER_MOVEMENT_SPEED * Time.deltaTime;
-            
+                _rigidbody2D.AddForce(Vector2.left * Config.PLAYER_MOVEMENT_SPEED);            
 
             if (Input.GetKey(KeyCode.RightArrow))
                 _rigidbody2D.AddForce(Vector2.right * Config.PLAYER_MOVEMENT_SPEED);
-            //_rigidbody2D.velocity += Vector2.right * Config.PLAYER_MOVEMENT_SPEED * Time.deltaTime;
-            //
         }
     }
 }
