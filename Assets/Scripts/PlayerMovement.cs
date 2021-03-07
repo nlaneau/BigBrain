@@ -7,12 +7,14 @@ namespace Assets.Scripts
         private Rigidbody2D _rigidbody2D;
         private GameObject _body;
         private GameObject _head;
+        private bool _isFacingLeft;
 
         private void Start()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _body = GameObject.Find("Body");
             _head = GameObject.Find("Head");
+            _isFacingLeft = true;
         }
 
         private void RotateBoy()
@@ -23,14 +25,16 @@ namespace Assets.Scripts
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow) && _body.transform.rotation.y != 0)
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && !_isFacingLeft)
             {
                 RotateBoy();
+                _isFacingLeft = true;
             }
 
-            if (Input.GetKeyDown(KeyCode.RightArrow) && _body.transform.rotation.y != 180)
+            if (Input.GetKeyDown(KeyCode.RightArrow) && _isFacingLeft)
             {
                 RotateBoy();
+                _isFacingLeft = false;
             }
 
             if (Input.GetKey(KeyCode.LeftArrow))
