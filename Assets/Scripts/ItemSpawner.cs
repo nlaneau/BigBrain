@@ -42,7 +42,7 @@ public class ItemSpawner : MonoBehaviour
 
         // Set new objects position to be a constant Y above BottomPlatform, but random X
         var yPos = _bottomPlatform.transform.position.y + Config.ITEM_SPAWN_HEIGHT;
-        var xPos = Random.Range(MinXPos, MaxXPos);
+        var xPos = Random.Range(MinXPos+1f, MaxXPos-1f);
 
         spawnedObj.transform.position = new Vector2(xPos, yPos);
     }

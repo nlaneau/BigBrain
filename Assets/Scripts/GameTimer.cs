@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -6,7 +7,6 @@ namespace Assets.Scripts
 {
     class GameTimer : MonoBehaviour
     {
-        public int _startTime = 30;
         public Head _head;
 
         private Text TimerText;
@@ -34,7 +34,7 @@ namespace Assets.Scripts
             {
                 Timer += Time.deltaTime;
 
-                currentTime = _startTime - (int)Timer % 60;
+                currentTime = Config.ROUND_DURATION - (int)Math.Round(Timer % 60, 0);
 
                 TimerText.text = currentTime.ToString();
             }
