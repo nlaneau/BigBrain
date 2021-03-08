@@ -38,10 +38,10 @@ namespace Assets.Scripts
             }
 
             if (Input.GetKey(KeyCode.LeftArrow))
-                _rigidbody2D.AddForce(Vector2.left * Config.PLAYER_MOVEMENT_SPEED);
+                _rigidbody2D.AddForce(Vector2.left * (Config.PLAYER_MOVEMENT_SPEED - _head.transform.localScale.magnitude));
 
             if (Input.GetKey(KeyCode.RightArrow))
-                _rigidbody2D.AddForce(Vector2.right * Config.PLAYER_MOVEMENT_SPEED);
+                _rigidbody2D.AddForce(Vector2.right * (Config.PLAYER_MOVEMENT_SPEED - _head.transform.localScale.magnitude));
         }
     }
 }

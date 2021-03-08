@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4650215441164354874}
   m_Layer: 0
   m_Name: dumb_object3_post
-  m_TagString: StupiderObject
+  m_TagString: SmarterObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
