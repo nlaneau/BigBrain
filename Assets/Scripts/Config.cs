@@ -7,5 +7,6 @@
         public const float PLAYER_MOVEMENT_SPEED = 85f;
         public const float HEAD_GROWTH_SCALE = 0.2f;
         public const int ROUND_DURATION = 60; // Seconds
+        public const float HEAD_SLOW_DOWN_MULTIPLIER = 10f;
     }
 }

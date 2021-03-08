@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -38,10 +39,16 @@ namespace Assets.Scripts
             }
 
             if (Input.GetKey(KeyCode.LeftArrow))
-                _rigidbody2D.AddForce(Vector2.left * (Config.PLAYER_MOVEMENT_SPEED - _head.transform.localScale.magnitude));
+            {
+                var newSpeed = Math.Max(Config.PLAYER_MOVEMENT_SPEED - (_head.transform.localScale.magnitude * Config.HEAD_SLOW_DOWN_MULTIPLIER), 1f);
+                _rigidbody2D.AddForce(Vector2.left * newSpeed);
+            }
 
             if (Input.GetKey(KeyCode.RightArrow))
-                _rigidbody2D.AddForce(Vector2.right * (Config.PLAYER_MOVEMENT_SPEED - _head.transform.localScale.magnitude));
+            {
+                var newSpeed = Math.Max(Config.PLAYER_MOVEMENT_SPEED - (_head.transform.localScale.magnitude * Config.HEAD_SLOW_DOWN_MULTIPLIER), 1f);
+                _rigidbody2D.AddForce(Vector2.right * newSpeed);
+            }
         }
     }
 }
