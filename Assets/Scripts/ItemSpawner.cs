@@ -7,6 +7,8 @@ public class ItemSpawner : MonoBehaviour
     public List<GameObject> _objects;
     public GameObject _bottomPlatform;
 
+    public bool DoSpawning = true;
+
     private float MaxXPos;
     private float MinXPos;
 
@@ -25,7 +27,7 @@ public class ItemSpawner : MonoBehaviour
     void Update()
     {
         // Every X frames, spawn a new random object
-        if (FrameCount % Config.ITEM_SPAWN_RATE == 0)
+        if (DoSpawning && FrameCount % Config.ITEM_SPAWN_RATE == 0)
         {
             SpawnObject();
             FrameCount = 0;
@@ -40,7 +42,7 @@ public class ItemSpawner : MonoBehaviour
 
         // Set new objects position to be a constant Y above BottomPlatform, but random X
         var yPos = _bottomPlatform.transform.position.y + Config.ITEM_SPAWN_HEIGHT;
-        var xPos = Random.Range(MinXPos, MaxXPos);
+        var xPos = Random.Range(MinXPos+1f, MaxXPos-1f);
 
         spawnedObj.transform.position = new Vector2(xPos, yPos);
     }
