@@ -7,6 +7,8 @@ public class ItemSpawner : MonoBehaviour
     public List<GameObject> _objects;
     public GameObject _bottomPlatform;
 
+    public bool DoSpawning = true;
+
     private float MaxXPos;
     private float MinXPos;
 
@@ -25,7 +27,7 @@ public class ItemSpawner : MonoBehaviour
     void Update()
     {
         // Every X frames, spawn a new random object
-        if (FrameCount % Config.ITEM_SPAWN_RATE == 0)
+        if (DoSpawning && FrameCount % Config.ITEM_SPAWN_RATE == 0)
         {
             SpawnObject();
             FrameCount = 0;

@@ -11,14 +11,14 @@ namespace Assets.Scripts
     {
         public AudioSource _small_head;
         public AudioSource _big_head;
-        public int _currentWeight = 0;
-        public int _maxWeight = 100;
-
         public WeightBar _weightBar;
+
+        private int CurrentWeight = 0;
+        private int MaxWeight = 100;        
 
         private void Start()
         {
-            _currentWeight = 0;
+
         }
         
         private void OnCollisionEnter2D(Collision2D collision)
@@ -50,16 +50,19 @@ namespace Assets.Scripts
 
         public void GainWeight(int weightIncrease)
         {
-            _currentWeight = Math.Min(100, _currentWeight + weightIncrease);
+            CurrentWeight = Math.Min(MaxWeight, CurrentWeight + weightIncrease);
 
-            _weightBar.SetWeight(_currentWeight);
+            _weightBar.SetWeight(CurrentWeight);
         }
 
         public void LoseWeight(int weightDecrease)
         {
-            _currentWeight = Math.Max(0, _currentWeight - weightDecrease);
+            CurrentWeight = Math.Max(0, CurrentWeight - weightDecrease);
 
-            _weightBar.SetWeight(_currentWeight);
+            _weightBar.SetWeight(CurrentWeight);
         }
+
+        public int GetCurrentWeight()
+            => CurrentWeight;
     }
 }
