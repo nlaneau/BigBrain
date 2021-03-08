@@ -26,20 +26,20 @@ namespace Assets.Scripts
 
         private float Timer = 0f;
         private bool Countdown = true;
+        private int CurrentTime = 0;
 
         private void Update()
         {
-            int currentTime = 0;
             if (Countdown)
             {
                 Timer += Time.deltaTime;
 
-                currentTime = Config.ROUND_DURATION - (int)Math.Round(Timer % 60, 0);
+                CurrentTime = Config.ROUND_DURATION - (int)Math.Round(Timer % 60, 0);
 
-                TimerText.text = currentTime.ToString();
+                TimerText.text = CurrentTime.ToString();
             }
 
-            if (currentTime <= 0)
+            if (CurrentTime <= 0)
             {
                 GameOver();
                 Countdown = false;
