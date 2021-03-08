@@ -35,14 +35,17 @@ namespace Assets.Scripts
                 _big_head.Play();
                 transform.localScale += new Vector3(Config.HEAD_GROWTH_SCALE, Config.HEAD_GROWTH_SCALE);                
             }
-            else
+            else // StupiderObject
             {
                 var newScale = transform.localScale - new Vector3(Config.HEAD_GROWTH_SCALE, Config.HEAD_GROWTH_SCALE);
-                _small_head.Play();
-                LoseWeight(2);
 
-                if (newScale.x > 0 && newScale.y > 0)
+                _small_head.Play();
+
+                if (newScale.x > 0.1 && newScale.y > 0.1)
+                {                    
+                    LoseWeight(2);
                     transform.localScale = newScale;
+                }
             }
 
             Destroy(collision.gameObject);

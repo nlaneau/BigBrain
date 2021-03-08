@@ -61,7 +61,7 @@ namespace Assets.Scripts
 
         private double CurrentWeightToMass(int weight)
         {
-            return weight * 1.1235;
+            return weight * 1.1235 + 1;
         }
 
         private int MassToIQ(double mass)
