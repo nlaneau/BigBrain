@@ -7,28 +7,71 @@ namespace Assets.Scripts
     class GameTimer : MonoBehaviour
     {
         public int _startTime = 30;
-        private Text Text;
+        public Head _head;
+
+        private Text TimerText;
+        private Text GameOverText;
+        private GameObject GameOverPanel;
+        private ItemSpawner ItemSpawner;
 
         private void Start()
         {
-            Text = GetComponent<Text>();
+            _head = (Head)FindObjectOfType(typeof(Head));
+            TimerText = GetComponent<Text>();
+            GameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
+            GameOverPanel = GameObject.Find("GameOverPanel");
+            GameOverPanel.SetActive(false);
+            ItemSpawner = (ItemSpawner)FindObjectOfType(typeof(ItemSpawner));
         }
 
         private float Timer = 0f;
+        private bool Countdown = true;
 
         private void Update()
         {
-            Timer += Time.deltaTime;
+            int currentTime = 0;
+            if (Countdown)
+            {
+                Timer += Time.deltaTime;
 
-            var currentTime = _startTime - (int)Timer % 60;
+                currentTime = _startTime - (int)Timer % 60;
 
-            Text.text = currentTime.ToString();
+                TimerText.text = currentTime.ToString();
+            }
 
             if (currentTime <= 0)
             {
-                // Do gameover check
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                GameOver();
+                Countdown = false;
             }
+        }
+
+        private void GameOver()
+        {
+            ItemSpawner.DoSpawning = false;
+
+            var weight = _head.GetCurrentWeight();
+            var mass = CurrentWeightToMass(weight);
+            var iq = MassToIQ(mass);
+
+            GameOverPanel.SetActive(true);
+
+            GameOverText.text = $"Your brain mass is {mass}kg.\nThat's an IQ of {iq}!";
+        }
+
+        private double CurrentWeightToMass(int weight)
+        {
+            return weight * 1.1235;
+        }
+
+        private int MassToIQ(double mass)
+        {
+            return (int)(mass * 2);
+        }
+
+        public void RetryButtonClicked()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
